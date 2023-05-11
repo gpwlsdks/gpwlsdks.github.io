@@ -1,3 +1,6 @@
+/* GOOGLE FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
 /* Reset */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
 *, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
@@ -34,13 +37,6 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 	text-transform: none;
 	line-height: 1em;
 }
-.icon-facebook:before { content: '\e802'; }
-.icon-facebook-squared:before { content: '\e800'; }
-.icon-twitter:before { content: '\e801'; }
-.icon-twitter-1:before { content: '\e804'; }
-.icon-facebook-circled:before { content: '\e805'; }
-.icon-twitter-circled:before { content: '\e806'; }
-.icon-facebook-rect:before { content: '\e803'; }
 
 /* Spacing */
 .post h1, h3, h4, h5, p, .post-body ul, #post-list li, pre {
@@ -55,18 +51,58 @@ body {
 	color: #666;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
+
+	position: relative;
+    margin: 0;
+    padding: 2rem 0 0 6.75rem;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    transition: .5s;
+}
+/* VARIABLES CSS */
+:root {
+    --nav--width: 92px;
+
+    /* Colores */
+    --first-color: #F07E2C;
+    --bg-color: #315B51;
+    --sub-color: #fff;
+    --white-color: #fff;
+
+    /* Fuente y tipografia */
+    --body-font: 'Poppins', sans-serif;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+
+    /* z index */
+    --z-fixed: 100;
 }
 
+/* BASE */
+*, ::before, ::after {
+    box-sizing: border-box;
+}
 h1 {
 	font-size: 30px;
 	letter-spacing: -1px;
 	color: #222;
 	font-weight: bold;
+	margin: 0;
 }
 
 h2 {
 	font: italic 19px/1.3em Georgia,serif;
 	color: #bbb;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 .profile #wrapper {
@@ -108,6 +144,7 @@ h2 {
 
 }
 
+
 nav.main-nav {
 	padding: 20px 20px 0;
 
@@ -125,7 +162,7 @@ nav.main-nav a {
 	top: 8px;
 	right: 6px;
 	padding: 8px 12px;
-	color: #5badf0;
+	color: #315B51;
 	font-size: 13px;
 	/*font-weight: bold;*/
 	line-height: 1.35;
@@ -133,7 +170,7 @@ nav.main-nav a {
 
 }
 nav.main-nav a.cta {
-	background: #5badf0;
+	background: #315B51;
 	color: #fff;
 	margin-left: 12px;
 }
@@ -165,11 +202,11 @@ a,
 #post-list li:hover .dates,
 #title:hover {
 	text-decoration: none;
-	color: #5badf0;
-	color: #5694f1;
+	color: #fff;
+	color: #fff;
 }
 
-p a { color: #5694f1; }
+p a { color: #fff; }
 
 /*Transitions*/
 a,
@@ -417,9 +454,9 @@ Post List
 }
 
 #archive-link:hover {
-	background: #5694f1;
+	background: #fff;
 	color: #fff;
-	box-shadow: 0 0 0 1px #5694f1;
+	box-shadow: 0 0 0 1px #fff;
 }
 
 #archive-link span {
@@ -574,7 +611,7 @@ h2.month {
 }
 
 #archive-list li a:hover,#archive-list li:hover .dates {
-	color: #5694f1;
+	color: #fff;
 }
 
 #post-meta img.avatar {
@@ -595,7 +632,7 @@ h2.month {
 
 #post-list.archive.readmore a{
 	font: 400 16px/1.6 "Helvetica Neue",helvetica,Arial,sans-serif;
-	color: #5694f1;
+	color: #fff;
 }
 
 #post-list.archive.readmore a:hover{
@@ -605,12 +642,7 @@ h2.month {
 #post-list.archive.readmore .dates{
 	font: 300 16px/1.6 "Helvetica Neue",helvetica,Arial,sans-serif;
 }
-#sharing a.facebook {
-  background: #4361b3;
-}
-#sharing a.twitter {
-  background: #4fafed;
-}
+
 
 #sharing a {
   font-size: 20px;
@@ -641,4 +673,122 @@ h2.month {
 	.post h2.headline { font-size: 13px; }
 	.post h1 { font-size:24px; }
 	.post h2 { font-size:20px; }
+}
+
+/* sidebar */
+/* l NAV */
+.l-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--nav--width);
+    height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--white-color);
+    padding: 1.5rem 1.5rem 2rem;
+    transition: .5s;
+    z-index: var(--z-fixed);
+}
+
+/* NAV */
+.nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.nav__brand {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.nav__toggle {
+    font-size: 1.25rem;
+    padding: .75rem;
+    cursor: pointer;
+}
+
+.nav__logo {
+    color: var(--white-color);
+    font-weight: 600;
+}
+
+.nav__link {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: .75rem;
+    padding: .75rem;
+    color: var(--white-color);
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.nav__link:hover {
+    background-color: var(--first-color);
+}
+
+.nav__icon {
+    font-size: 1.25rem;
+}
+
+.nav_name {
+    font-size: var(--small-font-size);
+}
+
+/* Expander menu */
+.expander {
+    width: calc(var(--nav--width) + 9.25rem);
+}
+
+/* Add padding body*/
+.body-pd {
+    padding: 2rem 0 0 16rem;
+}
+
+/* Active links menu */
+.active {
+    background-color: var(--first-color);
+}
+
+/* COLLAPSE */
+.collapse {
+    grid-template-columns: 20px max-content 1fr;
+}
+
+.collapse__link {
+    justify-self: flex-end;
+    transition: .5;
+}
+
+.collapse__menu {
+    display: none;
+    padding: .75rem 2.25rem;
+}
+
+.collapse__sublink {
+    color: var(--sub-color);
+    font-size: var(--small-font-size);
+}
+
+.collapse__sublink:hover {
+    color: var(--white-color);
+}
+
+/* Show collapse */
+.showCollapse {
+    display: block;
+}
+
+/* Rotate icon */
+.rotate {
+    transform: rotate(180deg);
+    transition: .5s;
 }
